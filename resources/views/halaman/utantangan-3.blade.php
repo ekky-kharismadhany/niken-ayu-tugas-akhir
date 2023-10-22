@@ -9,7 +9,7 @@
       <p>Memakai produk non-mikroplastik</p>
     </div>
     <div class="video">
-      <iframe src=></iframe>
+      <iframe src="https://www.youtube.com/embed/Tn1KgqwgJP8?autoplay=1"></iframe>
     </div>
     <br>
     <div class="text-center">

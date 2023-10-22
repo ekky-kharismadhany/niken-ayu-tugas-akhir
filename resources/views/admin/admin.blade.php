@@ -35,7 +35,7 @@
       <nav id="navbar" class="navbar order-last oreder-lg-0">
         <ul>
           <li><a href="">Hi, admin</a></li>
-          <li><a href="">Keluar</a></li>
+          <!-- <li><a href="">Keluar</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -51,7 +51,7 @@
       <nav id="navbar" class="navbar order-last oreder-lg-0">
         <ul>
           <li><a href="">Hi, admin</a></li>
-          <li><a href="">Keluar</a></li>
+          <!-- <li><a href="">Keluar</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

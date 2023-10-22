@@ -35,7 +35,7 @@ class ChallengeController extends Controller
         UploadedFile::create([
             "filename" => $path,
             "user_id" => $request->user_id,
-            "challenge_type" => $request->challengeType,
+"challenge_type" => $request->challengeType,
         ]);
         $path = $request->file("challengeItem2")->store("challengeItems");
         if (!$path) {
@@ -44,7 +44,7 @@ class ChallengeController extends Controller
         UploadedFile::create([
             "filename" => $path,
             "user_id" => $request->user_id,
-            "challenge_type" => $request->challengeType,
+"challenge_type" => $request->challengeType,
         ]);
         $path = $request->file("challengeItem3")->store("challengeItems");
         if (!$path) {
@@ -53,7 +53,7 @@ class ChallengeController extends Controller
         UploadedFile::create([
             "filename" => $path,
             "user_id" => $request->user_id,
-            "challenge_type" => $request->challengeType,
+"challenge_type" => $request->challengeType,
         ]);
         return true;
     }
@@ -104,7 +104,7 @@ class ChallengeController extends Controller
         UploadedFile::create([
             "filename" => $path,
             "user_id" => $request->user_id,
-            "challenge_type" => $request->challengeType,
+"challenge_type" => $request->challengeType,
         ]);
         $path = $request->file("challengeItem2")->store("challengeItems");
         if (!$path) {
@@ -114,7 +114,7 @@ class ChallengeController extends Controller
         UploadedFile::create([
             "filename" => $path,
             "user_id" => $request->user_id,
-            "challenge_type" => $request->challengeType,
+"challenge_type" => $request->challengeType,
         ]);
         session()->flash("success", $this->successMessage);
         return view("halaman.utantangan-3");

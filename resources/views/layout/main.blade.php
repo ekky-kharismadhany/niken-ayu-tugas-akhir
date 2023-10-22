@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <link rel="icon" type="image/x-icon" href="img/favicon_io/favicon.ico">
+<link rel="icon" type="image/x-icon" href="img/favicon_io/favicon.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,7 +13,7 @@
   <meta content="Microplastic" name="keywords">
 
   <!-- Favicons -->
-
+  
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,68 +57,64 @@
 
   @yield('konten')
 
-  <!-- Footer -->
-  <footer id="footer" class="footer">
-    <button id="scrollUpBtn" class="btn btn-primary" title="Scroll to top">
+<!-- Footer -->  
+<footer id="footer" class="footer">
+<button id="scrollUpBtn" class="btn btn-primary" title="Scroll to top">
       <i class="fas fa-chevron-up"></i>
     </button>
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-info">
-          <a href="/" class="logo d-flex align-items-center"><span>Beridampak</span></a>
-          <p>Bantu Beridampak agar dapat terus memberikan informasi terbaru dan terbaik dengan mengirim kritik dan saran membangun di bawah.</p>
-          <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSczATzVCpT9FvLDuPvIOTAgm9vioSzFWmVL0ZKqgAnUxOyNNQ/formResponse">
-            <div class="input-group mb-3">
-              <textarea class="form-control" name="entry.1994726872" id="exampleFormControlTextarea1" rows="1"></textarea>
-              <div class="input-group-append">
-                <button class="btn-get" type="submit">Kirim</button>
-              </div>
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-5 col-md-12 footer-info">
+        <a href="/" class="logo d-flex align-items-center"><span>Beridampak</span></a>
+        <p>Bantu Beridampak agar dapat terus memberikan informasi terbaru dan terbaik dengan mengirim kritik dan saran membangun di bawah.</p>
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSczATzVCpT9FvLDuPvIOTAgm9vioSzFWmVL0ZKqgAnUxOyNNQ/formResponse">
+          <div class="input-group mb-3">
+            <textarea class="form-control" name="entry.1994726872" id="exampleFormControlTextarea1" rows="1"></textarea>
+            <div class="input-group-append">
+              <button class="btn-get" type="submit">Kirim</button>
             </div>
-          </form>
-          <div class="social-links d-flex mt-4">
-            <a href="https://www.instagram.com/pxrtrait.niakapuwa/" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/niken-wardhana/" class="linkedin"><i class="bi bi-linkedin"></i></a>
           </div>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Kategori</h4>
-          <ul>
-            <li><a href="">Jenis Sampah</a></li>
-            <li><a href="">Mikroplastik</a></li>
-            <li><a href="">Penanggulangan</a></li>
-            <li><a href="/tantangan">Tantangan</a></li>
-            <li><a href="/lokasi">Produk Non-Mikroplastik</a></li>
-            <li><a href="/lokasi">Tempat Daur Ulang</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Customer Care</h4>
-          <ul>
-            <li><a href="/about">Profil Akun</a></li>
-            <li><a href="/about">Cara Penggunaan Website</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-12 footer-links">
-          <h4>Halaman</h4>
-          <ul>
-            <li><a href="/artikel">Artikel</a></li>
-            <li><a href="/lokasi">Lokasi</a></li>
-            <li><a href="/tantangan">Tantangan</a></li>
-            <li><a href="/about">Tentang Kita</a></li>
-          </ul>
+        </form>
+        <div class="social-links d-flex mt-4">
+          <a href="https://www.instagram.com/pxrtrait.niakapuwa/" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/niken-wardhana/" class="linkedin"><i class="bi bi-linkedin"></i></a>
         </div>
       </div>
+
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>Kategori</h4>
+        <ul>
+          <li><a href="/lokasi">Produk Non-Mikroplastik</a></li>
+          <li><a href="/lokasi">Tempat Daur Ulang</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="/#about">Profil</a></li>
+          <li><a href="syarat-dan-ketentuan">Syarat dan Ketentuan</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-12 footer-links">
+        <h4>Halaman</h4>
+        <ul>
+          <li><a href="/artikel">Artikel</a></li>
+          <li><a href="/lokasi">Lokasi</a></li>
+          <li><a href="/tantangan">Tantangan</a></li>
+          <li><a href="/#about">Tentang Kita</a></li>
+        </ul>
+      </div>
     </div>
-  </footer>
-  <div class="copyright">
-    &copy; Copyright <strong><span>Beridampak</span></strong> All Rights Reserved
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <script src="css/main.js"></script>
+</footer>
+<div class="copyright">
+  &copy; Copyright <strong><span>Beridampak</span></strong> All Rights Reserved
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<script src="css/main.js"></script>
 </body>
 <style>
   #scrollUpBtn {

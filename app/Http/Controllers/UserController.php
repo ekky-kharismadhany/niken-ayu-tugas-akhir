@@ -20,11 +20,11 @@ class UserController extends Controller
         $user = DB::table("user")->where("id", "=", Auth::user()->id)->first("nama");
         $userName = $this->getUserName($user->nama);
         $point = $this->calculatePoint();
-        $images = $this->getLastThreeImage();
+$images = $this->getLastThreeImage();
         return view("admin/user", [
             "userPoint" => $point,
             "userName" => $userName,
-            "images" => $images,
+"images" => $images,
         ]);
     }
 

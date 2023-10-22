@@ -32,8 +32,8 @@
 
     <nav id="navbar" class="navbar order-last oreder-lg-0">
       <ul>
-        <li><a href="">Hi, admin</a></li>
-        <li><a href="">Keluar</a></li>
+        <li><a href="/admin">Hi, admin</a></li>
+        <!-- <li><a href="">Keluar</a></li> -->
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
@@ -94,8 +94,9 @@
     &copy; Copyright <strong><span>Beridampak</span></strong> All Rights Reserved
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
   <script src="css/main.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
     document.getElementById("change-password-btn").addEventListener("click", function(e) {
       e.preventDefault();

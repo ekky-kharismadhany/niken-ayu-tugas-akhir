@@ -74,10 +74,10 @@ class SessionController extends Controller
         return view("halaman/utantangan-3");
     }
 
-    // index about
-    function tk()
+    // index TnC
+    function tnc()
     {
-        return view("halaman/about");
+        return view("halaman/tnc");
     }
     // index lokasi
     function lks()

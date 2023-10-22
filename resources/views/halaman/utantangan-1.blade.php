@@ -8,6 +8,9 @@
     <div class="celen-title">
       <p>Sehari memakai barang guna ulang</p>
     </div>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/FzAxxdVFnMQ?autoplay=1"></iframe>
+    </div>
     <br>
     <div class="text-center">
       <p>Coba sehari jajan di luar dengan memakai tempat minum dan makan sendiri dari rumah! Jangan lupa sedotan stainless juga ya!</p>
