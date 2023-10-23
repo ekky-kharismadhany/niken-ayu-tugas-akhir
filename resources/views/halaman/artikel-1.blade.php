@@ -35,8 +35,6 @@
         <p>Lalu, jika seperti ini apa yang bisa kita lakukan? Apakah hanya duduk berpangku tangan sembari menunggu peneliti menentukan jawabannya? Tidak. Meskipun penelitian tentang dampak langsungnya pada kesehatan manusia masih terbatas, namun bukti-bukti awal menunjukkan bahwa kita harus waspada. Yang tentu kita semua ketahui, akan menjadi bahaya yang semakin besar jika tidak ada perubahan.</p>
         <p>Maka yang bisa lakukan adalah mencegah atau mengurangi penggunaan plastik itu sendiri sebagai hulu permasalahan mikroplastik. Meskipun plastik masih kita perlukan, namun yang kita lupakan adalah terkadang kita berlebihan untuk menggunakannya dalam hal yang sebenarnya tidak diperlukan. Mulai dari mengurangi penggunaan kantong plastik sekali pakai, hingga memilih produk tanpa mikroplastik, setiap tindakan kecil dapat memberikan dampak besar dalam jangka panjang. Dengan upaya bersama dan komitmen untuk mengurangi penggunaan plastik, kita dapat melindungi lingkungan dan kesehatan kita dari ancaman ini.</p>
         <br>
-        <small class="d-block text-center mt-2"><a href="/Hujan-Mikroplastik-di-Paris:Fenomena-Baru-yang-Buruk">Baca artikel selanjutnya ></a></small>
-        <br>
         <br>
     </div>
   </div>

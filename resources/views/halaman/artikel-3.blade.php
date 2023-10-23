@@ -40,8 +40,6 @@
         <p>Kesimpulan: Apa Langkah Selanjutnya?</p>
         <p>Oxodegradable mungkin terdengar seperti solusi masa depan, namun realitas menunjukkan sebaliknya. Masalah plastik global memerlukan pendekatan yang lebih komprehensif, bukan hanya solusi cepat. Dengan memahami fakta dan tantangannya, kita bisa bergerak maju untuk mencari solusi yang benar-benar berdampak.</p>
         <br>
-        <small class="d-block text-center mt-2"><a href="/Hujan-Mikroplastik-di-Paris:Fenomena-Baru-yang-Buruk">< Baca artikel sebelumnya</a></small>
-        <br>
         <br>
     </div>
   </div>

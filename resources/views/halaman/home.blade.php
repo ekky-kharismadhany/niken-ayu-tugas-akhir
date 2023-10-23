@@ -13,6 +13,8 @@
 
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="img/favicon_io/favicon.ico">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
 
@@ -20,9 +22,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-icons/bootstrap-icons.css">
   
   <!-- Template Main CSS File -->
   <link rel="stylesheet" href="css/styles.css">
@@ -38,10 +42,19 @@
 
       <nav id="navbar" class="navbar order-last oreder-lg-0">
         <ul>
-          <li><a class="scrollto" href="#about">Tentang Kita</a></li>
-          <li><a class="scrollto" href="#artikel">Artikel</a></li>
-          <li><a class="scrollto" href="#lokasi">Lokasi</a></li>
-          <li><a class="scrollto" href="#tantangan">Tantangan</a></li>
+          <li><a href="/#about">Tentang Kita</a></li>
+          <li><a href="/artikel">Artikel</a></li>
+          <li><a href="/lokasi">Lokasi</a></li>
+          <li><a href="/tantangan">Tantangan</a></li>
+          <!-- halo, user -->
+          @if (Auth::check())
+          <li>
+            <a href="{{ route('user') }}">Halo, {{Auth::user()->nama}}!</a>
+          </li>
+          <li>
+            <a href="{{ route('signout') }}">Logout</a>
+          </li>
+          @endif
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -109,7 +122,7 @@
               <div class="portfolio-wrap">
                 <a href="img/straw.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="img/straw.jpg" class="img-fluid" alt=""></a>
                 <div class="portfolio-info">
-                  <h4><a href="/Oxodegradable:-Solusi-atau-Hanya-Sebuah-Ilusi-dalam-Menghadapi-Krisis-Plastik?">Oxodegradable: Solusi atau Hanya Sebuah Ilusi dalam Menghadapi Krisis Plastik?</a></h4>
+                  <h4>Oxodegradable: Solusi atau Hanya Sebuah Ilusi dalam Menghadapi Krisis Plastik?</h4>
                   <p>Dalam era modern, kita sering mendengar istilah "ramah lingkungan", termasuk dalam konteks plastik. Namun, sejauh mana kebenaran dari klaim ini? Apakah plastik ramah lingkungan benar-benar ramah terhadap Bumi kita?</p>
                   <button class="btn-com"><a href="/Oxodegradable:-Solusi-atau-Hanya-Sebuah-Ilusi-dalam-Menghadapi-Krisis-Plastik?">Baca artikel</a></button>
                 </div>
@@ -120,7 +133,7 @@
               <div class="portfolio-wrap">
                 <a href="img/hujan.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="img/hujan.jpg" class="img-fluid" alt=""></a>
                 <div class="portfolio-info">
-                  <h4><a href="/Paris:-Saksi-Bisu-Hujan-Mikroplastik-Pertama-Dunia">Paris: Saksi Bisu Hujan Mikroplastik Pertama Dunia</a></h4>
+                  <h4>Paris: Saksi Bisu Hujan Mikroplastik Pertama Dunia</h4>
                   <p>Paris, ibu kota Perancis yang sangat dikenal dengan cinta dan keindahannya, kini menghadapi ancaman baru: hujan mikroplastik. Sebuah fenomena yang mengkhawatirkan dan mencerminkan urgensi masalah lingkungan global.</p>
                   <button class="btn-com"><a href="/Paris:-Saksi-Bisu-Hujan-Mikroplastik-Pertama-Dunia">Baca artikel</a></button>
                 </div>
@@ -131,7 +144,7 @@
               <div class="portfolio-wrap">
                 <a href="img/mikroplastik.jpeg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="img/mikroplastik.jpeg" class="img-fluid" alt=""></a>
                 <div class="portfolio-info">
-                  <h4><a href="/Mikroplastik:-Ancaman-Global-dan-Potensi-Bahaya-bagi-Manusia">Mikroplastik: Ancaman Global dan Potensi Bahaya bagi Manusia</a></h4>
+                  <h4>Mikroplastik: Ancaman Global dan Potensi Bahaya bagi Manusia</h4>
                   <p>Dalam era modern ini, mikroplastik telah menjadi ancaman serius yang menyebar ke seluruh penjuru dunia. Mari kita gali lebih dalam tentang apa itu mikroplastik, pengaruhnya pada kesehatan, dan apa yang bisa kita lakukan untuk mengatasi masalah ini.</p>
                   <button class="btn-com"><a href="/Mikroplastik:-Ancaman-Global-dan-Potensi-Bahaya-bagi-Manusia">Baca artikel</a></button>
                 </div>

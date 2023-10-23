@@ -385,8 +385,8 @@ section {
 
 @media (max-width: 575px) {
   .portfolio .portfolio-flters li {
-    font-size: 14px;
-    margin: 0 5px;
+      font-size: 14px;
+      margin: 0 5px;
   }
 }
 
@@ -413,6 +413,7 @@ section {
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
   font-size: 18px;
+  color: var(--color-default);
   font-weight: 600;
   padding-right: 50px;
 }
@@ -427,7 +428,7 @@ section {
 }
 
 .portfolio .portfolio-wrap .portfolio-info p {
-  color: #6c757d;
+  color: var(--color-default);
   font-size: 14px;
   margin-bottom: 0;
   padding-right: 50px;
@@ -435,78 +436,6 @@ section {
 
 .portfolio .portfolio-wrap:hover img {
   transform: scale(1.1);
-}
-
-.portfolio .portfolio-wr {
-  margin-top: 0;  
-  height: 100%;
-  overflow: hidden;
-}
-
-.portfolio .portfolio-wr .portfolio-info {
-  padding: 25px 20px;
-  background-color: var(--color-default);
-  position: relative;
-  z-index: 2;
-}
-
-.portfolio .portfolio-wr .portfolio-info h4 {
-  font-size: 18px;
-  font-weight: 600;
-  padding-right: 50px;
-  text-align: center;
-}
-
-.portfolio .portfolio-wr .portfolio-info h4 a {
-  color: var(--color-primary);
-  transition: 0.3s;
-}
-
-.portfolio .portfolio-wr .portfolio-info h4 a:hover {
-  color: var(--color-tersier);
-}
-
-.portfolio .portfolio-wr .portfolio-info p {
-  color: #6c757d;
-  font-size: 14px;
-  text-align: center;
-}
-
-.portfolio .portfolio-wow {
-  margin-top: 0;  
-  height: 100%;
-  overflow: hidden;
-  border-left: 2px solid;
-  border-right: 2px solid;
-}
-
-.portfolio .portfolio-wow .portfolio-info {
-  padding: 25px 20px;
-  background-color: var(--color-default);
-  position: relative;
-  z-index: 2;
-}
-
-.portfolio .portfolio-wow .portfolio-info h4 {
-  font-size: 18px;
-  font-weight: 600;
-  padding-right: 50px;
-  text-align: center;
-}
-
-.portfolio .portfolio-wow .portfolio-info h4 a {
-  color: var(--color-primary);
-  transition: 0.3s;
-}
-
-.portfolio .portfolio-wow .portfolio-info h4 a:hover {
-  color: var(--color-tersier);
-}
-
-.portfolio .portfolio-wow.portfolio-info p {
-  color: #6c757d;
-  font-size: 14px;
-  text-align: center;
 }
 
 /*--------------------------------------------------------------

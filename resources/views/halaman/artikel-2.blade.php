@@ -33,9 +33,6 @@
         <p>Kesimpulan</p>
         <p>Paris, kota yang selalu dianggap sebagai simbol keindahan dan kebudayaan, kini menjadi saksi bisu dari dampak nyata perubahan iklim dan polusi lingkungan. Semoga apa yang terjadi di Paris bisa menjadi cambuk bagi kita semua untuk mulai bertindak dan berkomitmen menjaga bumi kita.</p>
         <br>
-        <small class="d-block text-center mt-2"><a href="/Bahaya-Mikroplastik-Bagi-Lingkungan-serta-Manusia">< Baca artikel sebelumnya</a></small>
-        <small class="d-block text-center mt-2"><a href="/Bahaya-Oxodegradable:Solusi-yang-Menjadi-Masalah-Baru">Baca artikel selanjutnya ></a></small>
-        <br>
         <br>
     </div>
   </div>

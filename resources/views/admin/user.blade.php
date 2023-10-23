@@ -51,6 +51,9 @@
     <div class="col-sm-12 form-group mb-0">
       <button type="submit" id="change-user-data-btn" class="btn-get float-center mt-1">Ubah Data Diri</button>
     </div>
+    <div class="col-sm-12 form-group mb-0">
+      <button class="btn btn-warning float-center mt-1"><a href="{{ route('challenge-list') }}">Kembali</a></button>
+    </div>
   </form>
 </section>
 <!-- End user -->

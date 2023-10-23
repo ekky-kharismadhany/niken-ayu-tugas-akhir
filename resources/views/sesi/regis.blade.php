@@ -36,10 +36,10 @@
       </a>
       <nav id="navbar" class="navbar">
         <ul class="nav justify-content-center">
-          <li><a href="/artikel"><span class="bi-book"> Artikel</a></li>
-          <li><a href="/lokasi"><span class="bi-pin-map"> Lokasi</a></li>
-          <li><a href="/tantangan"><span class="bi-gear"> Tantangan</a></li>
-          <li><a href="/tentang-kita"><span class="bi-person"> Tentang Kita</a></li>
+          <li><a href="/artikel">Artikel</a></li>
+          <li><a href="/lokasi">Lokasi</a></li>
+          <li><a href="/tantangan">Tantangan</a></li>
+          <li><a href="/tentang-kita"> Tentang Kita</a></li>
         </ul>
       </nav><!-- .navbar -->
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>

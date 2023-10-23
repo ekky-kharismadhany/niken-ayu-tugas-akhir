@@ -16,6 +16,16 @@ body {
   margin-bottom: 3rem;
 }
 
+a {
+  text-decoration: none;
+  color: #004d49; 
+}
+
+a:hover{
+  text-decoration: none;
+  color: #004d49;
+}
+
 .container {
   margin: auto;
   margin-top: 40px;

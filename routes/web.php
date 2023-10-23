@@ -20,7 +20,7 @@ Route::get('/', [SessionController::class, 'index']);
 Route::get('artikel', [SessionController::class, 'ar']);
 Route::get('Mikroplastik:-Ancaman-Global-dan-Potensi-Bahaya-bagi-Manusia', [SessionController::class, 'ar1']);
 Route::get('Paris:-Saksi-Bisu-Hujan-Mikroplastik-Pertama-Dunia', [SessionController::class, 'ar2']);
-Route::get('Oxodegradable:-Solusi-atau-Hanya-Sebuah-Ilusi-dalam-Menghadapi-Krisis-Plastik?', [SessionController::class, 'ar3']);
+Route::get('Oxodegradable:-Solusi-atau-Hanya-Sebuah-Ilusi-dalam-Menghadapi-Krisis-Plastik', [SessionController::class, 'ar3']);
 
 # Tantangan Route
 Route::get('/tantangan', [ChallengeController::class, 'challengeList'])->name("challenge-list");
