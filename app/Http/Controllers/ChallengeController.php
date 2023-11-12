@@ -12,6 +12,7 @@ class ChallengeController extends Controller
 
     protected $successMessage = "Foto tantangan telah tersimpan";
     protected $failedMessage = "Foto tantangan gagal tersimpan";
+    protected $incompleteMessage = "Mohon masukkan seluruh gambar untuk menyelesaikan tantangan";
 
     public function challengeList(): View
     {
@@ -60,12 +61,13 @@ class ChallengeController extends Controller
 
     public function postFirstChallenge(Request $request): View
     {
-        if (!$this->storeFile($request)) {
-            session()->flash("failed", $this->failedMessage);
-            return view("halaman.utantangan-1");
+        if (!$this->isUploadedMessageValid($request, 3)) {
+            return view("halaman.utantangan-1")->with("failed", $this->incompleteMessage);
         }
-        session()->flash("success", $this->successMessage);
-        return view("halaman.utantangan-1");
+        if (!$this->storeFile($request)) {
+            return view("halaman.utantangan-1")->with("failed", $this->failedMessage);
+        }
+        return view("halaman.utantangan-1")->with("success", $this->successMessage);
     }
 
     public function secondChallenge(): View
@@ -78,12 +80,13 @@ class ChallengeController extends Controller
 
     public function postSecondChallenge(Request $request): View
     {
-        if (!$this->storeFile($request)) {
-            session()->flash("failed", $this->failedMessage);
-            return view("halaman.utantangan-2");
+        if (!$this->isUploadedMessageValid($request, 3)) {
+            return view("halaman.utantangan-2")->with("failed", $this->incompleteMessage);
         }
-        session()->flash("success", $this->successMessage);
-        return view("halaman.utantangan-2");
+        if (!$this->storeFile($request)) {
+            return view("halaman.utantangan-2")->with("failed", $this->failedMessage);
+        }
+        return view("halaman.utantangan-2")->with("success", $this->successMessage);
     }
 
     public function thirdChallenge(): View
@@ -96,10 +99,12 @@ class ChallengeController extends Controller
 
     public function postThirdChallenge(Request $request): View
     {
+        if (!$this->isUploadedMessageValid($request, 2)) {
+            return view("halaman.utantangan-3")->with("failed", $this->incompleteMessage);
+        }
         $path = $request->file("challengeItem1")->store("challengeItems");
         if (!$path) {
-            session()->flash("failed", $this->failedMessage);
-            return view("halaman.utantangan-3");
+            return view("halaman.utantangan-3")->with("failed", $this->failedMessage);
         }
         UploadedFile::create([
             "filename" => $path,
@@ -108,15 +113,20 @@ class ChallengeController extends Controller
         ]);
         $path = $request->file("challengeItem2")->store("challengeItems");
         if (!$path) {
-            session()->flash("failed", "failed to save challenge image");
-            return view("halaman.utantangan-3");
+            return view("halaman.utantangan-3")->with("failed", $this->failedMessage);;
         }
         UploadedFile::create([
             "filename" => $path,
             "user_id" => $request->user_id,
             "challenge_type" => $request->challengeType,
         ]);
-        session()->flash("success", $this->successMessage);
-        return view("halaman.utantangan-3");
+        return view("halaman.utantangan-3")->with("success", $this->successMessage);
+    }
+
+    protected function isUploadedMessageValid(Request $request, int $expectedNumberOfFile) : bool {
+        if(count($request->files) < $expectedNumberOfFile) {
+            return false;
+        }
+        return true;
     }
 }

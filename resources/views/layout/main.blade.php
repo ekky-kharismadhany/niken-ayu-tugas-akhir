@@ -166,21 +166,83 @@
 </script>
 
 <script>
+  function validateFirstAndSecond() {
+    let item1 = document.getElementById("item1");
+    let item2 = document.getElementById("item2");
+    let item3 = document.getElementById("item3");
+    if (item1.files.length == 0) {
+      alert("foto 1 kosong");
+      return false;
+    }
+    if (item2.files.length == 0) {
+      alert("foto 2 kosong");
+      return false;
+    }
+    if (item3.files.length == 0) {
+      alert("foto 3 kosong");
+      return false
+    }
+    return true
+  }
+
+  function validateThird() {
+    let formType = document.getElementById("tantanganType").value;
+    if (formType == "tantangan 3") {
+      if (validateFirstAndSecond()) {
+        e.preventDefault();
+        swal({
+          title: "Konfirmasi",
+          text: "Apa anda memasukkan foto tantangan dengan benar?",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true
+        })
+        .then((result) => {
+          if (result) {
+            document.getElementById("form-challenge").submit();
+          }
+        });
+      }
+    }
+  }
+
   document.getElementById('form-challenge-btn').addEventListener('click', function(e) {
-    e.preventDefault()
-    swal({
-        title: "Konfirmasi",
-        text: "Apa anda memasukkan foto tantangan dengan benar?",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-      })
-      .then((result) => {
-        if (result) {
-          document.getElementById("form-challenge").submit()
-        }
-      });
-  });
+    let formType = document.getElementById("tantanganType").value;
+    if (formType == "tantangan 1" || formType == "tantangan 2") {
+      if (validateFirstAndSecond()) {
+        e.preventDefault();
+        swal({
+          title: "Konfirmasi",
+          text: "Apa anda memasukkan foto tantangan dengan benar?",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true
+        })
+        .then((result) => {
+          if (result) {
+            document.getElementById("form-challenge").submit();
+          }
+        });
+      }
+    }
+    if (formType == "tantangan 3") {
+      if (validateThird()) {
+        e.preventDefault();
+        swal({
+          title: "Konfirmasi",
+          text: "Apa anda memasukkan foto tantangan dengan benar?",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true
+        })
+        .then((result) => {
+          if (result) {
+            document.getElementById("form-challenge").submit();
+          }
+        });
+      }
+    }
+  })
 </script>
 
 </html>

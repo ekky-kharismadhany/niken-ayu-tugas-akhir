@@ -69,18 +69,21 @@
         </div>
         <label class="col-sm-2 col-form-label">Jenis Kelamin</label>
         <div class="col-sm-10">
-          <input type="text" name="gender" class="form-control mb-3" value="{{ $data->gender }}" style="max-width: 50vh" required disabled>
+          <select class="form-select" name="gender" aria-label="Gender Example" style="max-width: 50vh" required disabled>
+            <option value="Laki - Laki" {{ $data->gender === 'Laki - Laki' ? 'selected' : '' }}>Laki - Laki</option>
+            <option value="Perempuan" {{ $data->gender === 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+          </select>
         </div>
-        <label for="inputPassword" class="col-sm-2 col-form-label">Ganti Password</label>
-        <div class="col-sm-10">
-          <input type="password" name="password" class="form-control" id="inputPassword" style="max-width: 50vh" required>
+        <label for="inputPassword" class="col-sm-2 col-form-label mt-3">Ganti Password</label>
+        <div class="col-sm-10 mt-3">
+          <input type="password" name="password" class="form-control" id="inputPassword" style="max-width: 50vh">
         </div>
       </div>
-      <input name="user_id" class="form-control" id="userID" value="{{ $data->id }}" hidden required>
       <div class="row">
         <div class="col-sm-12 form-group mb-0">
           <button id="change-password-btn" class="btn btn-success float-center mt-1">Ubah Password</button>
         </div>
+        <input name="user_id" class="form-control" id="userID" value="{{ $data->id }}" hidden required>
         <div class="col-sm-12 form-group mb-0">
           <button class="btn btn-warning float-center mt-1"><a href="{{ route('admin') }}">Kembali</a></button>
         </div>

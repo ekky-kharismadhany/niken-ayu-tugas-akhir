@@ -16,34 +16,34 @@
       @csrf
       <div class="mb-3">
         <label for="formFile" class="form-label">Pakai tumblr sendiri</label>
-        <input class="form-control" type="file" id="formFile" name="challengeItem1" accept="image/*" required>
+        <input id="item1" class="form-control" type="file" id="formFile" name="challengeItem1" accept="image/*" required>
       </div>
       <div class="mb-3">
         <label for="formFile" class="form-label">Selalu pakai sedotan stainless steel</label>
-        <input class="form-control" type="file" id="formFile" name="challengeItem2" accept="image/*" required>
+        <input id="item2" class="form-control" type="file" id="formFile" name="challengeItem2" accept="image/*" required>
       </div>
       <div class="mb-3">
         <label for="formFile" class="form-label">Pakai totebag atau tas pakai ulang (reuse)</label>
-        <input class="form-control" type="file" id="formFile" name="challengeItem3" accept="image/*" required>
+        <input id="item3" class="form-control" type="file" id="formFile" name="challengeItem3" accept="image/*" required>
       </div>
       <div>
         <input class="form-control" id="formFile" name="user_id" value="{{ Auth::user()->id }}" hidden>
       </div>
       <div>
-        <input class="form-control" id="formFile" name="challengeType" value="tantangan 1" hidden>
+        <input id="tantanganType" class="form-control" id="formFile" name="challengeType" value="tantangan 1" hidden>
       </div>
       <button id="form-challenge-btn" class="btn-com mb-3" type="submit">Selesaikan Tantangan</button>
     </form>
-    @if(session("success"))
+    @isset($success)
       <div class="alert alert-success" role="alert">
-        {{ session("success") }}
+        {{ $success }}
       </div>
-    @endif
-    @if(session("failed"))
+    @endisset
+    @isset($failed)
       <div class="alert alert-danger" role="alert">
-        {{ session("failed") }}
+        {{ $failed }}
       </div>
-    @endif
+    @endisset
 </section>
 <!-- End Tantangan -->
 @endsection

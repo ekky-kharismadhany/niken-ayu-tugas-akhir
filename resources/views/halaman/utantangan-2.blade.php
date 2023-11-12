@@ -19,34 +19,34 @@
       @csrf
       <div class="mb-3">
         <label for="formFile" class="form-label">Bersepeda saat berpergian</label>
-        <input name="challengeItem1" class="form-control" type="file" accept="image/* required">
+        <input id="item1" name="challengeItem1" class="form-control" type="file" accept="image/*" required>
       </div>
       <div class="mb-3">
         <label for="formFile" class="form-label">Memakai kendaraan umum saat berpergian</label>
-        <input name="challengeItem2" class="form-control" type="file" accept="image/* required">
+        <input id="item2" name="challengeItem2" class="form-control" type="file" accept="image/* required" required>
       </div>
       <div class="mb-3">
         <label for="formFile" class="form-label">Jalan kaki saat berpergian</label>
-        <input name="challengeItem3" class="form-control" type="file" accept="image/* required">
+        <input id="item3" name="challengeItem3" class="form-control" type="file" accept="image/* required" required>
       </div>
       <div>
         <input class="form-control" id="formFile" name="user_id" value="{{ Auth::user()->id }}" hidden>
       </div>
       <div>
-        <input class="form-control" id="formFile" name="challengeType" value="tantangan 2" hidden>
+        <input id="tantanganType" class="form-control" id="formFile" name="challengeType" value="tantangan 2" hidden>
       </div>
       <button id="form-challenge-btn" class="btn-com mb-3" type="submit">Selesaikan tantangan</button>
     </form>
-    @if(session("success"))
+    @isset($success)
       <div class="alert alert-success" role="alert">
-        {{ session("success") }}
+        {{ $success }}
       </div>
-    @endif
-    @if(session("failed"))
+    @endisset
+    @isset($failed)
       <div class="alert alert-danger" role="alert">
-        {{ session("failed") }}
+        {{ $failed }}
       </div>
-    @endif
+    @endisset
   </div>
 </section>
 <!-- End Tantangan -->

@@ -63,6 +63,23 @@
     <button class="btn btn--form" type="submit" value="login">Masuk</button>
     </form>
     <small class="d-block text-center mt-2"><a href="/registrasi">Daftar sekarang</a></small>
+    @if(session("error"))
+      <div class="alert alert-danger mt-5" role="alert">
+        {{ session("error") }}
+      </div>
+    @endif
+    @if(session("registerSuccess"))
+      <div class="alert alert-success mt-5" role="alert">
+        {{ session("registerSuccess") }}
+      </div>
+    @endif
+    @if ($errors->any())
+      @foreach($errors->all() as $error)
+        <div class="alert alert-danger" role="alert">
+          {{ $error }}
+        </div>
+      @endforeach
+    @endif
   </div>
 
 <div class="copyright">
