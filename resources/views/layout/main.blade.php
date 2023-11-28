@@ -1,3 +1,13 @@
+@php
+  if (!Auth::check()) {
+    return;
+  }
+  $nama = Auth::user()->nama;
+  $stringParts = explode(" ", $nama);
+  if (count($stringParts) >= 2) {
+    $nama = $stringParts[0] . " " . $stringParts[1];
+  }
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,7 +52,7 @@
           <!-- halo, user -->
           @if (Auth::check())
           <li>
-            <a href="{{ route('user') }}">Halo, {{Auth::user()->nama}}!</a>
+            <a href="{{ route('user') }}">Halo, {{$nama}}!</a>
           </li>
           <li>
             <a href="{{ route('signout') }}">Logout</a>
@@ -191,17 +201,17 @@
       if (validateFirstAndSecond()) {
         e.preventDefault();
         swal({
-          title: "Konfirmasi",
-          text: "Apa anda memasukkan foto tantangan dengan benar?",
-          icon: "warning",
-          buttons: true,
-          dangerMode: true
-        })
-        .then((result) => {
-          if (result) {
-            document.getElementById("form-challenge").submit();
-          }
-        });
+            title: "Konfirmasi",
+            text: "Apa anda memasukkan foto tantangan dengan benar?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true
+          })
+          .then((result) => {
+            if (result) {
+              document.getElementById("form-challenge").submit();
+            }
+          });
       }
     }
   }
@@ -212,34 +222,34 @@
       if (validateFirstAndSecond()) {
         e.preventDefault();
         swal({
-          title: "Konfirmasi",
-          text: "Apa anda memasukkan foto tantangan dengan benar?",
-          icon: "warning",
-          buttons: true,
-          dangerMode: true
-        })
-        .then((result) => {
-          if (result) {
-            document.getElementById("form-challenge").submit();
-          }
-        });
+            title: "Konfirmasi",
+            text: "Apa anda memasukkan foto tantangan dengan benar?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true
+          })
+          .then((result) => {
+            if (result) {
+              document.getElementById("form-challenge").submit();
+            }
+          });
       }
     }
     if (formType == "tantangan 3") {
       if (validateThird()) {
         e.preventDefault();
         swal({
-          title: "Konfirmasi",
-          text: "Apa anda memasukkan foto tantangan dengan benar?",
-          icon: "warning",
-          buttons: true,
-          dangerMode: true
-        })
-        .then((result) => {
-          if (result) {
-            document.getElementById("form-challenge").submit();
-          }
-        });
+            title: "Konfirmasi",
+            text: "Apa anda memasukkan foto tantangan dengan benar?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true
+          })
+          .then((result) => {
+            if (result) {
+              document.getElementById("form-challenge").submit();
+            }
+          });
       }
     }
   })

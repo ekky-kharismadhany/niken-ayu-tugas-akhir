@@ -27,13 +27,16 @@ class AuthController extends Controller
         return view("sesi.regis");
     }
 
-    public function loginForm(Request $request): View
+    public function loginForm(Request $request): View | RedirectResponse
     {
         $request->validate([
             "email" => "email:rfc,dns"
         ]);
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
+            if (Auth::user()->email === "admin@beridampak.my.id") {
+                return redirect(route("admin"));
+            }
             return view("halaman.tantangan");
         }
         session()->flash("error", "Pastikan akun telah terdaftar dan data yang dimasukkan telah sesuai");

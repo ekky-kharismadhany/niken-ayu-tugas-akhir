@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 Here is where you can register web routes for your application. These routes are loaded by the RouteServiceProvider within a group which contains the "web" middleware group. Now create something great!
 */
 
-Route::get('/', [SessionController::class, 'index']);
+Route::get('/', [SessionController::class, 'index'])->name("home");
 
 # Artikel Route
 Route::get('artikel', [SessionController::class, 'ar']);
@@ -22,20 +22,17 @@ Route::get('Bahaya-Mikroplastik-Bagi-Lingkungan-serta-Manusia', [SessionControll
 Route::get('Hujan-Mikroplastik-di-Paris:Fenomena-Baru-yang-Buruk', [SessionController::class, 'ar2']);
 Route::get('Bahaya-Oxodegradable:Solusi-yang-Menjadi-Masalah-Baru', [SessionController::class, 'ar3']);
 
+
+Route::middleware(['adminCheck'])->group(function() {
+    Route::get('/tantangan', [ChallengeController::class, 'challengeList'])->name("challenge-list");
+    Route::get('/tantangan-1', [ChallengeController::class, 'firstChallenge'])->name("first-challenge");
+    Route::post('/tantangan-1', [ChallengeController::class, 'postFirstChallenge'])->name("first-challenge.post");
+    Route::get('/tantangan-2', [ChallengeController::class, 'secondChallenge'])->name("second-challenge");
+    Route::post("/tantangan-2", [ChallengeController::class, "postSecondChallenge"])->name("second-challenge.post");
+    Route::get('/tantangan-3', [ChallengeController::class, 'thirdChallenge'])->name("third-challenge");
+    Route::post('/tantangan-3', [ChallengeController::class, 'postThirdChallenge'])->name("third-challenge.post");
+});
 # Tantangan Route
-Route::get('/tantangan', [ChallengeController::class, 'challengeList'])->name("challenge-list");
-Route::get('/tantangan-1', [ChallengeController::class, 'firstChallenge'])->name("first-challenge");
-Route::post('/tantangan-1', [ChallengeController::class, 'postFirstChallenge'])->name("first-challenge.post");
-Route::get('/tantangan-2', [ChallengeController::class, 'secondChallenge'])->name("second-challenge");
-Route::post("/tantangan-2", [ChallengeController::class, "postSecondChallenge"])->name("second-challenge.post");
-Route::get('/tantangan-3', [ChallengeController::class, 'thirdChallenge'])->name("third-challenge");
-Route::post('/tantangan-3', [ChallengeController::class, 'postThirdChallenge'])->name("third-challenge.post");
-
-
-Route::get('form-tantangan-pertama', [SessionController::class, 'ucelen1']);
-Route::get('form-tantangan-kedua', [SessionController::class, 'ucelen2']);
-Route::get('form-tantangan-ketiga', [SessionController::class, 'ucelen3']);
-
 
 # Lokasi Route
 Route::get('/lokasi', [SessionController::class, 'lks']);

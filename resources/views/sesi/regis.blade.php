@@ -81,7 +81,20 @@
         </div>
         <div class="col-sm-6 form-group">
           <label for="pass" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-          <input type="Password" name="password" class="form-control" id="pass" placeholder="Enter your password" required>
+          <input id='password' type="Password" name="password" class="form-control" id="pass" placeholder="Enter your password" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <div class="row">
+            <div class="col-1">
+              <!-- Checkbox -->
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="showPassword" />
+              </div>
+            </div>
+            <div class="d-flex col-md-auto">
+              <label class="form-check-label align-self-end" for="showPassword">Lihat Password</label>
+            </div>
+          </div>
         </div>
         <div class="col-sm-12 form-group mb-0">
           <button class="btn-get float-right mt-1">Submit</button>
@@ -97,11 +110,11 @@
         </div>
         @endif
         @if ($errors->any())
-          @foreach($errors->all() as $error)
-            <div class="alert alert-danger mt-5" role="alert">
-              {{ $error }}
-            </div>
-          @endforeach
+        @foreach($errors->all() as $error)
+        <div class="alert alert-danger mt-5" role="alert">
+          {{ $error }}
+        </div>
+        @endforeach
         @endif
       </div>
     </form>
@@ -112,6 +125,15 @@
   </div>
   <script src="./css/bootstrap/js/jquery.js"></script>
   <script src="./css/bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const passwordInput = document.getElementById("password");
+      const showPasswordCheckbox = document.getElementById("showPassword");
+      showPasswordCheckbox.addEventListener("change", function() {
+        passwordInput.type = this.checked ? 'text' : 'password';
+      });
+    });
+  </script>
 </body>
 
 </html>
