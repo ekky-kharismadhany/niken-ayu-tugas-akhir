@@ -27,10 +27,13 @@ class AuthController extends Controller
         return view("sesi.regis");
     }
 
-    public function loginForm(Request $request): View
+    public function loginForm(Request $request): View | RedirectResponse
     {
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
+            if (Auth::user()->email == 'admin@beridampak.my.id') {
+                return redirect(route("admin"));
+            }
             return view("halaman.tantangan");
         }
         return view("sesi.login");
