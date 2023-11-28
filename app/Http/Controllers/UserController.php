@@ -30,10 +30,6 @@ class UserController extends Controller
 
     private function getUserName(string $nama): string
     {
-        $stringParts = explode(" ", $nama);
-        if (count($stringParts) >= 2) {
-            return $stringParts[0] . " " . $stringParts[1];
-        }
         return $nama;
     }
 
