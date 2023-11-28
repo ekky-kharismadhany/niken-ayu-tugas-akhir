@@ -1,18 +1,17 @@
 @php
-  if (!Auth::check()) {
-    return;
-  }
+$nama = "";
+if (Auth::check()) {
   $nama = Auth::user()->nama;
   $stringParts = explode(" ", $nama);
   if (count($stringParts) >= 2) {
     $nama = $stringParts[0] . " " . $stringParts[1];
   }
+}
 @endphp
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <link rel="icon" type="image/x-icon" href="img/favicon_io/favicon.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -23,6 +22,9 @@
   <meta content="Microplastic" name="keywords">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="img/favicon_io/favicon.ico">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,6 +32,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-icons/bootstrap-icons.css">
 
   <!-- Template Main CSS File -->
   <link rel="stylesheet" href="css/styles.css">
@@ -55,7 +61,7 @@
             <a href="{{ route('user') }}">Halo, {{$nama}}!</a>
           </li>
           <li>
-            <a href="{{ route('signout') }}">Logout</a>
+            <a href="{{ route('signout') }}">Keluar</a>
           </li>
           @endif
         </ul>
@@ -69,6 +75,11 @@
 
   <!-- Footer -->
   <footer id="footer" class="footer">
+    <div class="buttonkanan">
+      <a href="https://forms.gle/KK5toN5xyxjc8kTa9" target="_blank">
+        <img src="img/customer-service.png" class="img-fluid" alt="customer service" style="height: 7vh;">
+      </a>
+    </div>
     <button id="scrollUpBtn" class="btn btn-primary" title="Scroll to top">
       <i class="fas fa-chevron-up"></i>
     </button>
@@ -94,10 +105,6 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Kategori</h4>
           <ul>
-            <li><a href="">Jenis Sampah</a></li>
-            <li><a href="">Mikroplastik</a></li>
-            <li><a href="">Penanggulangan</a></li>
-            <li><a href="/tantangan">Tantangan</a></li>
             <li><a href="/lokasi">Produk Non-Mikroplastik</a></li>
             <li><a href="/lokasi">Tempat Daur Ulang</a></li>
           </ul>
@@ -106,8 +113,8 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Customer Care</h4>
           <ul>
-            <li><a href="/about">Profil Akun</a></li>
-            <li><a href="/about">Cara Penggunaan Website</a></li>
+            <li><a href="/#about">Profil Beridampak</a></li>
+            <li><a href="syarat-dan-ketentuan">Syarat dan Ketentuan</a></li>
           </ul>
         </div>
 
@@ -117,7 +124,7 @@
             <li><a href="/artikel">Artikel</a></li>
             <li><a href="/lokasi">Lokasi</a></li>
             <li><a href="/tantangan">Tantangan</a></li>
-            <li><a href="/about">Tentang Kita</a></li>
+            <li><a href="/#about">Tentang Kita</a></li>
           </ul>
         </div>
       </div>

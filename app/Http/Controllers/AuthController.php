@@ -27,32 +27,17 @@ class AuthController extends Controller
         return view("sesi.regis");
     }
 
-    public function loginForm(Request $request): View | RedirectResponse
+    public function loginForm(Request $request): View
     {
-        $request->validate([
-            "email" => "email:rfc,dns"
-        ]);
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            if (Auth::user()->email === "admin@beridampak.my.id") {
-                return redirect(route("admin"));
-            }
             return view("halaman.tantangan");
         }
-        session()->flash("error", "Pastikan akun telah terdaftar dan data yang dimasukkan telah sesuai");
         return view("sesi.login");
     }
 
-    public function registerForm(Request $request)
+    public function registerForm(Request $request): RedirectResponse
     {
-        $request->validate([
-            "email" => "email:rfc,dns"
-        ]);
-        $user = User::where("email", $request->email)->first();
-        if ($user) {
-            session()->flash("sameEmail", "email telah terdaftar");
-            return view("sesi.regis");
-        }
         User::create([
             "nama" => $request->name,
             "alamat" => $request->address,
@@ -61,24 +46,12 @@ class AuthController extends Controller
             "email" => $request->email,
             "password" => Hash::make($request->password),
         ]);
-        session()->flash("registerSuccess", "Registrasi sukses, silahkan masuk");
         return redirect(route("login.get"));
     }
 
     public function changeUserData(Request $request)
     {
-        $request->validate([
-            "email" => "email:rfc,dns"
-        ]);
-        if ($request->password != "") {
-            if (!$this->changeUserPasswordInUserPage($request)) {
-                session()->flash("error", "Perubahan sandi gagal. Tolong ulangi");
-                return redirect(route("user"));
-            }
-            Auth::logout();
-            session()->flash("registerSuccess", "Perubahan password sukses. Silakan masuk");
-            return redirect(route("login.get"));
-        }
+        $password = Hash::make($request->password);
         $user = User::find($request->user_id);
         $user->nama = $request->name;
         $user->email = $request->email;
@@ -86,29 +59,12 @@ class AuthController extends Controller
         $user->gender = $request->gender;
         $user->no_hp = $request->phone;
 
-        $user->save();
-        session()->flash("success", "Perubahan data berhasil");
-        return redirect(route("user"));
-    }
+        $user->password = $password;
 
-    private function changeUserPasswordInUserPage(Request $request) : bool {
-        if ($request->password != $request->passwordConfirmation) {
-            return false;
-        }
-        $newPassword = Hash::make($request->password);
-        $user = User::find($request->user_id);
-        if (!$user) {
-            return false;
-        }
-        $user = User::find($request->user_id);
-        $user->nama = $request->name;
-        $user->email = $request->email;
-        $user->alamat = $request->alamat;
-        $user->gender = $request->gender;
-        $user->no_hp = $request->phone;
-        $user->password = $newPassword;
         $user->save();
-        return true;
+
+        Auth::logout();
+        return redirect(route("login.get"));
     }
 
     public function changeUserPassword(Request $request)

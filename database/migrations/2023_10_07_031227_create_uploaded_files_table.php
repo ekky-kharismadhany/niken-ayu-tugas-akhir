@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("filename");
             $table->unsignedInteger("user_id");
             $table->foreign("user_id")->references("id")->on("user");
-            $table->string("challenge_type");
+$table->string("challenge_type");
         });
     }
 

@@ -6,24 +6,27 @@
 <section id="celen" class="celen">
   <div class="container" data-aos="fade-up">
     <div class="celen-title">
-      <p>Sehari memakai barang guna ulang</p>
+      <p>Sehari Memakai Barang Guna Ulang</p>
+    </div>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/FzAxxdVFnMQ?autoplay=1"></iframe>
     </div>
     <br>
     <div class="text-center">
-      <p>Coba sehari jajan di luar dengan memakai tempat minum dan makan sendiri dari rumah! Jangan lupa sedotan stainless juga ya!</p>
+      <p>Coba sehari jajan di luar dengan memakai tempat minum dan makan sendiri dari rumah! Jangan lupa sedotan <i>stainless</i> juga ya!</p>
     </div>
     <form id="form-challenge" method="POST" action="{{ route('first-challenge.post') }}" enctype="multipart/form-data">
       @csrf
       <div class="mb-3">
-        <label for="formFile" class="form-label">Pakai tumblr sendiri</label>
+        <label for="formFile" class="form-label">Pakai <i>tumblr</i> sendiri</label>
         <input id="item1" class="form-control" type="file" id="formFile" name="challengeItem1" accept="image/*" required>
       </div>
       <div class="mb-3">
-        <label for="formFile" class="form-label">Selalu pakai sedotan stainless steel</label>
+        <label for="formFile" class="form-label">Selalu pakai sedotan <i>stainless steel</i></label>
         <input id="item2" class="form-control" type="file" id="formFile" name="challengeItem2" accept="image/*" required>
       </div>
       <div class="mb-3">
-        <label for="formFile" class="form-label">Pakai totebag atau tas pakai ulang (reuse)</label>
+        <label for="formFile" class="form-label">Pakai <i>totebag</i> atau tas pakai ulang</label>
         <input id="item3" class="form-control" type="file" id="formFile" name="challengeItem3" accept="image/*" required>
       </div>
       <div>

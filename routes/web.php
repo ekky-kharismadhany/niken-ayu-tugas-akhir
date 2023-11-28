@@ -18,13 +18,13 @@ Route::get('/', [SessionController::class, 'index'])->name("home");
 
 # Artikel Route
 Route::get('artikel', [SessionController::class, 'ar']);
-Route::get('Bahaya-Mikroplastik-Bagi-Lingkungan-serta-Manusia', [SessionController::class, 'ar1']);
-Route::get('Hujan-Mikroplastik-di-Paris:Fenomena-Baru-yang-Buruk', [SessionController::class, 'ar2']);
-Route::get('Bahaya-Oxodegradable:Solusi-yang-Menjadi-Masalah-Baru', [SessionController::class, 'ar3']);
+Route::get('Mikroplastik:-Ancaman-Global-dan-Potensi-Bahaya-bagi-Manusia', [SessionController::class, 'ar1']);
+Route::get('Paris:-Saksi-Bisu-Hujan-Mikroplastik-Pertama-Dunia', [SessionController::class, 'ar2']);
+Route::get('Oxodegradable:-Solusi-atau-Hanya-Sebuah-Ilusi-dalam-Menghadapi-Krisis-Plastik', [SessionController::class, 'ar3']);
 
 
+Route::get('/tantangan', [ChallengeController::class, 'challengeList'])->name("challenge-list");
 Route::middleware(['adminCheck'])->group(function() {
-    Route::get('/tantangan', [ChallengeController::class, 'challengeList'])->name("challenge-list");
     Route::get('/tantangan-1', [ChallengeController::class, 'firstChallenge'])->name("first-challenge");
     Route::post('/tantangan-1', [ChallengeController::class, 'postFirstChallenge'])->name("first-challenge.post");
     Route::get('/tantangan-2', [ChallengeController::class, 'secondChallenge'])->name("second-challenge");
@@ -37,8 +37,8 @@ Route::middleware(['adminCheck'])->group(function() {
 # Lokasi Route
 Route::get('/lokasi', [SessionController::class, 'lks']);
 
-# About Route
-Route::get('/tentang-kita', [SessionController::class, 'tk']);
+# TnC Route
+Route::get('/syarat-dan-ketentuan', [SessionController::class, 'tnc']);
 
 # Login Route
 Route::get('/masuk', [AuthController::class, 'loginView'])->name('login.get');
