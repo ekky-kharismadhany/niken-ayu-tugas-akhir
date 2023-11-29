@@ -1,3 +1,13 @@
+@php
+$nama = "";
+if (Auth::check()) {
+  $nama = Auth::user()->nama;
+  $stringParts = explode(" ", $nama);
+  if (count($stringParts) >= 2) {
+    $nama = $stringParts[0] . " " . $stringParts[1];
+  }
+}
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +59,7 @@
           <!-- halo, user -->
           @if (Auth::check())
           <li>
-            <a href="{{ route('user') }}">Profil {{Auth::user()->nama}}</a>
+            <a href="{{ route('user') }}">Profil {{$nama}}</a>
           </li>
           <li>
             <a href="{{ route('signout') }}">Keluar</a>
