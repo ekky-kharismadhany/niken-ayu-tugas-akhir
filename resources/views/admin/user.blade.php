@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', '| User')
+@section('title', '| Pengguna')
 
 @section('konten')
 <!-- ======= Up Section ======= -->
