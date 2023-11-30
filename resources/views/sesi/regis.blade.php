@@ -35,8 +35,8 @@
           <input id="email" type="email" class="form-control" name="email" required autocomplete="email" placeholder="email@email.com">
         </div>
         <div class="col-sm-6 form-group">
-          <label for="pass" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-          <input id='password' type="Password" name="password" class="form-control" id="pass" placeholder="Enter your password" required>
+          <label for="pass" class="col-md-4 col-form-label text-md-right">{{ __('Kata Sandi') }}</label>
+          <input id='password' type="Password" name="password" class="form-control" id="pass" placeholder="Masukkan Kata Sandi" required>
         </div>
         <div class="col-sm-6 form-group">
           <div class="row">
@@ -47,12 +47,12 @@
               </div>
             </div>
             <div class="d-flex col-md-auto">
-              <label class="form-check-label align-self-end" for="showPassword">Lihat Password</label>
+              <label class="form-check-label align-self-end" for="showPassword">Lihat Kata Sandi</label>
             </div>
           </div>
         </div>
         <div class="col-sm-12 form-group mb-0">
-        <button class="btn-get float-right mt-1">Submit</button>
+        <button class="btn-get float-right mt-1">Registrasi</button>
         </div>
         @if(session("sameEmail"))
         <div class="alert alert-danger mt-5" role="alert">

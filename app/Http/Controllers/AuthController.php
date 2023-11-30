@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -122,6 +123,22 @@ class AuthController extends Controller
 
         Auth::logout();
         return redirect(route("login.get"));
+    }
+
+    public function changeUserPasswordByAdmin(Request $request) : RedirectResponse
+    {
+        if (!Auth::check()) {
+            abort(Response::HTTP_FORBIDDEN, "Pengguna belum login");
+        }
+        if (Auth::user()->email != "admin@beridampak.my.id") {
+            abort(Response::HTTP_UNAUTHORIZED, "Pengguna bukan admin");
+        }
+        $password = Hash::make($request->password);
+        $user = User::find($request->user_id);
+        $user->password = $password;
+        $user->save();
+        session()->flash("success", "Kata sandi " . $user->nama . " berhasil diubah");
+        return redirect(route('admin-user', ['user_id' => $user->id]));
     }
 
     public function signOut(): RedirectResponse

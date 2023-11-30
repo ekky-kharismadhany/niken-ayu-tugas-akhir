@@ -58,6 +58,9 @@
     <div class="col-sm-12 form-group mb-0">
       <button type="submit" id="change-user-data-btn" class="btn-get float-center mt-1">Ubah Data Diri</button>
     </div>
+    <div class="col-sm-12 form-group mb-0">
+      <button class="btn-n float-center mt-1"><a href="{{ route('home') }}">Kembali</a></button>
+    </div>
     @if(session('success'))
     <div class="alert alert-success" role="alert">
       {{ session('success') }}

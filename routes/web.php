@@ -61,3 +61,4 @@ Route::post("/change-userpassword", [AuthController::class, "changeUserPassword"
 
 Route::get('/admin', [AdminController::class, 'getUserInAdmin'])->name("admin");
 Route::get('/admin-user', [AdminController::class, 'getDetailUserInAdmin'])->name("admin-user");
+Route::post("/admin-user", [AuthController::class, "changeUserPasswordByAdmin"])->name("admin-user.post");

@@ -58,7 +58,7 @@ if (Auth::check()) {
           <!-- halo, user -->
           @if (Auth::check())
           <li>
-            <a href="{{ route('user') }}">Halo, {{$nama}}!</a>
+            <a href="{{ route('user') }}">Profil {{$nama}}</a>
           </li>
           <li>
             <a href="{{ route('signout') }}">Keluar</a>
